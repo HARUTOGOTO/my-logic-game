@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Collect42 - Sample</title>
+  <style>
+    /* 簡易スタイル例 */
+    body {
+      background: #eee;
+      font-family: sans-serif;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #gameContainer {
+      margin-top: 20px;
+      background: #ccc;
+      position: relative; /* Canvas以外で拡張するなら */
+    }
+    #gameCanvas {
+      background: #999;
+      display: block;
+      /* サイズはお好みで */
+      width: 600px;
+      height: 400px;
+    }
+    .commands-area {
+      margin: 10px 0;
+    }
+    .commands-area button {
+      margin: 0 4px;
+      padding: 8px;
+    }
+    #commandQueue {
+      margin-top: 10px;
+      min-height: 40px;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+    }
+    #speedControl {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Collect42 - Sample</h1>
+
+  <!-- ゲーム表示領域 -->
+  <div id="gameContainer">
+    <!-- Canvas: タイル＆プレイヤーを描画する -->
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+  </div>
+
+  <!-- コマンドボタン (前進・左折・右折など) -->
+  <div class="commands-area">
+    <button id="btnForward">↑</button>
+    <button id="btnLeft">←</button>
+    <button id="btnRight">→</button>
+    <button id="btnF1">F1</button>
+    <button id="btnF2">F2</button>
+  </div>
+
+  <!-- コマンドキュー可視化 (追加したコマンドが並ぶ) -->
+  <div id="commandQueue"></div>
+
+  <!-- メイン操作ボタン & スライダー -->
+  <div class="commands-area">
+    <button id="btnGo">Go !</button>
+    <button id="btnReset">Reset</button>
+    <div id="speedControl">
+      Speed: <input type="range" id="speedSlider" min="1" max="10" value="5">
+    </div>
+  </div>
+  <!-- 例えば、ステージ選択ボタンを置くエリア -->
+  <div id="stageSelectContainer">
+    <button id=btnStageSelect>Stage Select</button>>
+  </div>
+
+
+  <!-- ビルド済みJSの読み込み(パスはプロジェクト構成に合わせる) -->
+  <script src="../dist/index.js"></script>
+</body>
+</html>

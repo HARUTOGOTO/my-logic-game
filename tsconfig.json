@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    // target を ES2016(=ES7) や ES2017, ESNext 等に変える
+    "target": "ES2016",
+
+    // module が "ES6" となっているなら、お好みで "ES2015", "ESNext" に
+    "module": "ES6",
+
+    // lib に "ES2016" を含める (DOM はブラウザ操作用)
+    "lib": ["DOM", "ES2016"],
+
+    // 出力先
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // その他のオプション
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"]
+}
